@@ -1,7 +1,7 @@
 package com.examly.service;
 
-import com.example.Repository.ServiceRepository;
-import com.example.model.ServiceModel;
+import com.examly.Repository.ServiceRepository;
+import com.examly.model.ServiceModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
