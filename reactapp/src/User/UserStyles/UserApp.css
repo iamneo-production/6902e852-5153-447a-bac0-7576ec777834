@@ -67,15 +67,6 @@ input[type="email"],
   float: right;
 }
 
-
-/*.main{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-*/
 .UpdateEdit {
   border: 2px solid #d3d3d3;
   border-radius: .5em;
