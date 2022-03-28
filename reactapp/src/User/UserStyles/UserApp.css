@@ -66,3 +66,89 @@ input[type="email"],
 .deleteCard {
   float: right;
 }
+
+
+/*.main{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+*/
+.UpdateEdit {
+  border: 2px solid #d3d3d3;
+  border-radius: .5em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 1em;
+  text-align: left;
+  width: 600px;
+}
+.mainCardUser {
+  border-radius: .5em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 1em;
+  width: 1200px;
+  
+}
+
+.formEdit {
+  padding: 1em;
+}
+.pullRight{
+  float:right;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.DashBoardCard {
+  border: 2px solid #d3d3d3;
+  border-radius: .5em;
+  margin-bottom: 1em;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 1em;
+  width: 400px;
+}
+.head{
+  padding-top: 5px;
+  padding-left: 90px;
+}
+.HomeCard {
+  border-radius: .5em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 1em;
+  width: 1200px; 
+}
+.search{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 75px;
+  text-align: center;
+ 
+}
+.btnBook{
+  padding-top:10px ;
+  padding-left: 12rem;
+}
+.BookForm{
+  display: block;
+  width: 470px;
+  padding: 1px 30px 10px 10px ;
+  background-image: none;
+  border-radius: 6px;
+  height:600px;
+  margin-top: 10px;
+  margin-bottom: 1em;
+  
+  border: 2px solid #d3d3d3;
+}
