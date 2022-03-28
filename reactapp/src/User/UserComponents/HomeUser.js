@@ -96,16 +96,4 @@ function HomeUser() {
 }
 
 export default HomeUser;
-/*
-const setID = (id,name,email,mobile,address,ima,desc) =>{
-    
-    localStorage.setItem('ID', id)
-    localStorage.setItem('Name', name)
-    localStorage.setItem('Email', email)
-    localStorage.setItem('Mobile', mobile)
-    localStorage.setItem('Address', address)
-    localStorage.setItem('ImageURL', ima)
-    localStorage.setItem('Desc', desc)
-    console.log(id," ",name," ",email);
-  }
-*/
+
