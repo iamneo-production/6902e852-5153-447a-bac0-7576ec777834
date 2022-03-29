@@ -1,0 +1,68 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Serif 4', sans-serif;
+  }
+
+
+.body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .Formcontainer{
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+  .Formcontainer .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+ .button{
+    height: 45px;
+    margin: 5px 0
+  }
+  .button{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .button:hover{
+   /* transform: scale(0.99); */
+   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+   }
+  @media(max-width: 584px){
+  .container{
+   max-width: 100%;
+  }
+}
+
+.textColWhite{
+  color:white;
+  text-decoration: none;
+}
+
+.error{
+  color:red;
+}
