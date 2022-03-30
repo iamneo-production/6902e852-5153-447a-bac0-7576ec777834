@@ -47,6 +47,45 @@ function MyBooking() {
         console.log(err);
       });
   };
+  const today = new Date();
+   const currentMonth =  today.getMonth()+1
+
+   //check whether current month is single digit or not 
+   // Is signle digit add 0 before month digit -- since in booked Date from form - getting 03
+   const Length = currentMonth.toString().length;
+   let thisMonth = "";
+   if(Length === 1){
+     thisMonth = "0"+ currentMonth.toString();
+   }
+   else
+    thisMonth = currentMonth;
+      //Calculate todays date & current time
+   const currentDate = `${today.getFullYear()}-${thisMonth}-${today.getDate()}`;
+   const currentTime = today.getHours() + ':' + today.getMinutes();
+
+   function onReviewClick(bookedDate , bookedTime){
+     console.log("Current date & Current Time :" ,currentDate," ", currentTime)
+     console.log("Booked Date  &  Booked Time :",bookedDate," ",bookedTime)
+    if(currentDate === bookedDate ){
+      if(currentTime >= bookedTime){
+            setDisplay(true); 
+            console.log("Review Button Enabled -- Current book same date")
+        }
+        else{
+            alert("You can Review After provided Time Slot .. ")
+            console.log(" Review Button Disabled -- Current book same date")
+        }
+      }
+      else if (currentDate > bookedDate){
+          setDisplay(true); 
+          console.log("Review Button Enable")
+      }
+      else{ 
+          alert("You can Review After provided Time Slot .. ")
+          console.log("Review Button Disable")
+      }
+  }
+
 
   return (
     <div>
