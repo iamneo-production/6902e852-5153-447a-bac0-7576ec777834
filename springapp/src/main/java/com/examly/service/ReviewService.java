@@ -1,9 +1,9 @@
-package com.example.service;
+package com.examly.service;
 
 
-import com.example.Repository.ReviewRepository;
+import com.examly.Repository.ReviewRepository;
 
-import com.example.model.Review;
+import com.examly.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
