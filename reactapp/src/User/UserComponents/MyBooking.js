@@ -86,7 +86,54 @@ function MyBooking() {
       }
   }
 
+  const colors = {
+    orange: "#0000FF",
+    grey: "#a9a9a9"
+    
+  };
+  //const [reviewId , setReviewId]= useState(0);
+  const [currentValue, setCurrentValue] = useState(0);
+  const [hoverValue, setHoverValue] = useState(undefined);
+  const stars = Array(5).fill(0)
+  const [display, setDisplay] = useState(false);
+  const[contentmsg,setContent] = useState("");
+  const[p_id ,setBookingId] = useState(0)
 
+  const handleClick = value => {
+    setCurrentValue(value)
+  }
+
+  const handleMouseOver = newHoverValue => {
+    setHoverValue(newHoverValue)
+  };
+
+  const handleMouseLeave = () => {
+    setHoverValue(undefined)
+  }
+
+  const handleReviewClose = () => {
+    setDisplay(false);
+  };
+
+  function handleReviewSubmit(data) {
+    //console.log({currentValue},{content})
+    const rating = currentValue;
+    const content = contentmsg;
+    
+    data = {p_id,rating,content, userId: localStorage.getItem("userid") };
+    axios.post(`${base_url}/addReview`, data,{
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      }).then(
+      (response) => {
+        console.log("Rated ",response.data);
+        setDisplay(false);
+      },
+      (error) => {
+        console.log(error);
+        console.log("error");
+      }
+    );
+  }
   return (
     <div>
       <NavUser />
