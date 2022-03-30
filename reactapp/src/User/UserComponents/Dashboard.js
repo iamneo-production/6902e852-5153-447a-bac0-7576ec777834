@@ -11,6 +11,28 @@ import { useNavigate, useLocation } from "react-router-dom";
 import base_url from "../../api/bootapi";
 import axios from "axios";
 function DashBoard() {
+  function validateDate(dateChoosen){
+    const today = new Date();
+    const currentMonth =  today.getMonth()+1
+
+    //check whether current month is single digit or not 
+    // Is signle digit add 0 before month digit -- since in booked Date from form - getting 03
+    const Length = currentMonth.toString().length;
+    let thisMonth = "";
+    if(Length === 1){
+      thisMonth = "0"+ currentMonth.toString();
+    }
+    else
+      thisMonth = currentMonth;
+        //Calculate todays date & current time
+    const currentDate = `${today.getFullYear()}-${thisMonth}-${today.getDate()}`;
+    console.log("Todays date",currentDate)
+    console.log("Choosen date",dateChoosen)
+    if(currentDate <= dateChoosen){
+      return true;
+    }
+    return false;
+  }
   const navigate = useNavigate();
   const location = useLocation();
   const [state, setState] = useState(location.state);
@@ -84,8 +106,13 @@ function DashBoard() {
               initialValues={initialValues}
               validationSchema={validate}
               onSubmit={(values) => {
-                console.log(values);
-                handleBook(values);
+        
+                if(validateDate(values.dateOfPurchase)){
+                  handleBook(values);
+                }
+                else
+                alert("Date choosen should not be less than Current Date")
+               
               }}
             >
               {(formik) => (
