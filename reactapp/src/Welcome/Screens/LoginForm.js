@@ -14,21 +14,23 @@ function LoginForm() {
       .required("Password is required"),
   });
   function postDatatoServer(data) {
-    axios.post(`${base_url}/user/login`, data).then(
+    axios.post(`${base_url}/login`, data).then(
       (response) => {
         console.log(response.data);
         if (response.data.useroradmin === "user") {
           localStorage.setItem("userid", response.data.id);
+          localStorage.setItem("token", response.data.jwt);
           navigate("/HomeUser");
         } else if (response.data.useroradmin === "admin") {
           localStorage.setItem("userid", response.data.id);
+          localStorage.setItem("token", response.data.jwt);
           navigate("/AddCenter");
         } else {
-          alert("Invalid Credentials");
+          console.log("Ivalid Credentials");
         }
       },
       (error) => {
-        console.log(error);
+        alert("Invalid Credentials");
         console.log("error");
       }
     );
