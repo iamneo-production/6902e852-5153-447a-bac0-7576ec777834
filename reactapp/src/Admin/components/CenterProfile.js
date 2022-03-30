@@ -31,7 +31,9 @@ function CenterProfile() {
 
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:8080/${serviceCenterById}`)
+      .delete(`http://localhost:8080/admin/deleteServiceCenter/${serviceCenterById}`,{
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
       .then((data) => {
         navigate("/CenterProfile");
         setShow(false);
