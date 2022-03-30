@@ -58,12 +58,15 @@ function DashBoard() {
     availableSlots: "12:00:00",
     problemDescription: "",
   };
+  //Booking Slot
   function handleBook(data) {
+    
     data = { ...data, userId: localStorage.getItem("userid") };
-    axios.post(`${base_url}/user/addUser`, data).then(
+    axios.post(`${base_url}/user/addUserAppointment`, data ,{
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },}
+      ).then(
       (response) => {
-        console.log(response);
-
+        console.log(response.data);
         navigate("/MyBooking");
       },
       (error) => {
