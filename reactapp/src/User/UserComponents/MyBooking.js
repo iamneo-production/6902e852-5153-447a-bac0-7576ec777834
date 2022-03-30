@@ -19,13 +19,13 @@ function MyBooking() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`${base_url}/user/getUser?userId=${localStorage.getItem("userid")}`)
-
-      .then(({ data }) => {
+      .get(`${base_url}/user/getUserProduct?userId=${localStorage.getItem("userid")}`,{
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then(({ data }) => { 
         console.log(data);
         setBookList(data);
         // console.log(state);
-        console.log("good");
       });
   }, [load]);
   const handleUpdate = (book, ID) => {
@@ -37,7 +37,9 @@ function MyBooking() {
 
   const handleDelete = (deleteId) => {
     axios
-      .delete(`http://localhost:8080/deleteProducts/${deleteId}`)
+      .delete(`http://localhost:8080/user/cancelappointment/${deleteId}`,{
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
       .then((data) => {
         setLoad(!load);
         setShow(false);
@@ -47,6 +49,8 @@ function MyBooking() {
         console.log(err);
       });
   };
+  
+  //Date & Time
   const today = new Date();
   const currentMonth = today.getMonth() + 1;
 
