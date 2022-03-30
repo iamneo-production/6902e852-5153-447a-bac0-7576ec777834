@@ -13,7 +13,9 @@ function HomeUser() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get("http://localhost:8080/allService").then(({ data }) => {
+    axios.get("http://localhost:8080/admin/getAllServiceCenters",{
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    }).then(({ data }) => {
       console.log(data);
       setServiceList(data);
     });
