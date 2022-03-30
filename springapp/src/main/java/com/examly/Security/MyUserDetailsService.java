@@ -1,7 +1,7 @@
-package com.example.Security;
+package com.examly.Security;
 
-import com.example.Repository.UserRepository;
-import com.example.model.UserModel;
+import com.examly.Repository.UserRepository;
+import com.examly.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
