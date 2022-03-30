@@ -45,8 +45,9 @@ function AddCenter() {
     try {
       const sub = await axios({
         method: "POST",
-        url: `${base_url}/admin/add`,
+        url: `${base_url}/admin/addServiceCenter`,
         data: value,
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       });
       console.log(value,sub);
       navigate("/CenterProfile");
