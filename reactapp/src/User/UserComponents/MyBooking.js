@@ -8,7 +8,7 @@ import { Table, Button } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import { PencilSquare, Trash } from "react-bootstrap-icons";
 import base_url from "../../api/bootapi";
-
+import { FaStar } from "react-icons/fa";
 function MyBooking() {
   const [bookList, setBookList] = useState([]);
   const [show, setShow] = useState(false);
@@ -149,6 +149,7 @@ function MyBooking() {
                   <th>Timmings</th>
                   <th>Update</th>
                   <th>Delete</th>
+                  <th>Rate</th>
                 </tr>
               </thead>
 
@@ -175,6 +176,15 @@ function MyBooking() {
                           }}
                         />
                       </td>
+                      <td>
+                          <Button variant="danger" onClick={() => {
+                          
+                          setBookingId(value.id)  //Product Booking Id
+                          onReviewClick(value.dateOfPurchase,value.availableSlots);  
+                        }}>Review</Button>
+
+                      </td>
+
                     </tr>
                   );
                 })}
@@ -194,6 +204,52 @@ function MyBooking() {
           </Modal>
         </Container>
       </div>
+      <div>
+        
+        <Modal show={display} onHide={handleReviewClose}>
+            <Modal.Body>
+                <div style={styles.container}>
+                <h2> Customer Review </h2>
+                <div style={styles.stars}>
+                    {stars.map((_, index) => {
+                    return (
+                        <FaStar
+                        key={index}
+                        size={24}
+                        onClick={() => handleClick(index + 1)}
+                        onMouseOver={() => handleMouseOver(index + 1)}
+                        onMouseLeave={handleMouseLeave}
+                        color={(hoverValue || currentValue) > index ? colors.blue : colors.grey}
+                        style={{
+                            marginRight: 10,
+                            cursor: "pointer"
+                        }}
+                        
+                        />
+
+                    )
+                    })}
+                </div>
+                <textarea
+                    placeholder="We would love to hear about your experience"
+                    onChange={(e) => setContent(e.target.value)}
+                    style={styles.textarea}
+                   
+                />
+                </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleReviewClose}>
+                Not now
+              </Button>
+
+              <Button variant="primary" onClick={() => handleReviewSubmit()} >
+                Submit
+              </Button>
+              
+            </Modal.Footer>
+        </Modal>
+    </div>
     </div>
   );
 }
