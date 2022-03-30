@@ -17,7 +17,9 @@ function EditBooking() {
     e.preventDefault();
     console.log("submitted");
     axios
-      .put(`http://localhost:8080/productsUpdate/${state.id}`, state)
+      .put(`http://localhost:8080/user/editappointment/${state.id}`, state
+      ,{headers: { Authorization: "Bearer " + localStorage.getItem("token") },}
+      )
       .then((data) => {
         navigate("/MyBooking");
         console.log(data);
