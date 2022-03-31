@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, Formik, Form } from "formik";
+import { Formik, Form } from "formik";
 import TextBar from "./TextBar";
 import * as Yup from "yup";
 import axios from "axios";
@@ -67,6 +67,7 @@ function RegisterForm() {
             <TextBar
               name="useroradmin"
               type="select"
+              className = "dropBox"
               options={["user", "admin"]}
               placeholder="Enter User/admin"
               id="userorname"
