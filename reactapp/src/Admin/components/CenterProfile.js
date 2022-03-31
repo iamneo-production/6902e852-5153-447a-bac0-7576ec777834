@@ -4,7 +4,6 @@ import { Card, Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { PencilSquare, Trash } from "react-bootstrap-icons";
 import NavAdmin from "./NavAdmin";
-import NavAdmin from "./NavAdmin";
 
 //import base_url from "../../api/bootapi";
 
