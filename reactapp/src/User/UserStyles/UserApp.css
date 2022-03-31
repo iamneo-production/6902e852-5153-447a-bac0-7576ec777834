@@ -1,53 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
-.c1 {
+
+body{
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+  }
+.c1{
   padding-left: 20px;
 }
-.container1 {
+.container1{
   max-width: 700px;
   width: 100%;
   padding: 25px 30px;
   border-radius: 5px;
 }
-input.form-control,
-input.form-control:focus {
-  background: #f0f0ff;
+input.form-control, input.form-control:focus {
+  background: #F0F0FF;
 }
 
 .error {
+  
   color: red;
   font-size: 0.8rem;
 }
 
-.img1class {
+.img1class{
   height: 800px;
-  width: 800px;
+  width:800px;
   padding-left: 300px;
   padding-bottom: 300px;
   padding-right: 80px;
 }
 
+
 /*Form */
-.loginBlock1 {
+.loginBlock1{
   display: block;
   width: 500px;
-  padding: 1px 30px 10px 10px;
+  padding: 1px 30px 10px 10px ;
   background-image: none;
   border-radius: 6px;
   height: 400px;
 }
 
-.desc {
+.desc{
   padding-top: 5px;
   font-size: medium;
 }
 
-input[type="text"],
-input[type="email"],
-.descBox {
+input[type='text'],
+input[type = 'email'],
+input[type = 'time'],
+input[type = 'select'],
+input[type = 'password'],
+input[type = 'date'],.dropBox,.descBox{
   display: inline-block;
   width: 450px;
   padding: 6px 12px;
@@ -58,15 +63,25 @@ input[type="email"],
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+  
 }
 
 /* ----- Center Profile Page ------*/
 /* Card Body*/
 
-.deleteCard {
+
+.deleteCard{
   float: right;
 }
 
+/*.main{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+*/
 .UpdateEdit {
   border: 2px solid #d3d3d3;
   border-radius: .5em;

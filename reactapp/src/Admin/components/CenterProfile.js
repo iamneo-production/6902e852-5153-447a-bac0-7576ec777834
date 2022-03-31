@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { PencilSquare, Trash } from "react-bootstrap-icons";
 import NavAdmin from "./NavAdmin";
 
-//import base_url from "../../api/bootapi";
-
 function CenterProfile() {
   const [serviceList, setServiceList] = useState([]);
   const [show, setShow] = useState(false);

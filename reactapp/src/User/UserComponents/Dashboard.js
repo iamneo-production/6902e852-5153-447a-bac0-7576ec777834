@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,  } from "react";
 import NavUser from "./NavUser";
 import { Card, CardText, CardBody, CardTitle, CardImg } from "reactstrap";
 import "../UserStyles/UserApp.css";
 import * as Yup from "yup";
-import { Formik, Form } from "formik";
+import { Formik, Form,Field } from "formik";
 import { Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TextField from "../../Fields/TextField";
 import { useNavigate, useLocation } from "react-router-dom";
 import base_url from "../../api/bootapi";
 import axios from "axios";
+//import Alert from '@mui/material/Alert';
 function DashBoard() {
+
   function validateDate(dateChoosen){
     const today = new Date();
     const currentMonth =  today.getMonth()+1
@@ -33,9 +35,10 @@ function DashBoard() {
     }
     return false;
   }
+
   const navigate = useNavigate();
   const location = useLocation();
-  const [state, setState] = useState(location.state);
+  const [state] = useState(location.state);
   const validate = Yup.object({
     productName: Yup.string()
       .max(30, "Must be 30 characters or less")
@@ -44,9 +47,9 @@ function DashBoard() {
       .max(30, "Must be 30 characters or less")
       .required("Model is Required"),
     dateOfPurchase: Yup.date().required("Date is Required"),
-    contactNumber: Yup.string()
-      .min(10, "Should be 10 numbers")
-      .max(10,"Should be 10 numbers")
+    contactNumber:Yup.string()
+    .min(10, "should be 10 number")
+    .max(10, "should be 10 number")
       .required("Required"),
     availableSlots: Yup.string().required("Time is required"),
   });
@@ -56,7 +59,7 @@ function DashBoard() {
     productModelNo: "",
     dateOfPurchase: "",
     contactNumber: "",
-    availableSlots: "12:00:00",
+    availableSlots:"",
     problemDescription: "",
   };
   //Booking Slot
@@ -110,13 +113,14 @@ function DashBoard() {
               initialValues={initialValues}
               validationSchema={validate}
               onSubmit={(values) => {
-        
+                //console.log(values);
+                //handleBook(values);
                 if(validateDate(values.dateOfPurchase)){
                   handleBook(values);
                 }
                 else
                 alert("Date choosen should not be less than Current Date")
-               
+                //console.log(values.dateOfPurchase);
               }}
             >
               {(formik) => (
@@ -139,15 +143,17 @@ function DashBoard() {
                           label="Date of the Product"
                           type="date"
                           name="dateOfPurchase"
+                          
                         />
                         <TextField
-                          label="Number of the Product"
+                          label="Contact Number"
                           type="text"
                           name="contactNumber"
                         />
-                        <TextField
+                        Available Slot
+                        <Field
                           label="Available Slot"
-                          type="text"
+                          type="time"
                           name="availableSlots"
                         />
                         <div>
@@ -155,7 +161,7 @@ function DashBoard() {
                           <textarea
                             type="text"
                             name="problemDescription"
-                            class="form-control"
+                            class="descBox"
                             id="addCentreDescription"
                             rows="3"
                           ></textarea>

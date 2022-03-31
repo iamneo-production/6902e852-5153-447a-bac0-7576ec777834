@@ -11,8 +11,7 @@ function EditBooking() {
   const navigate = useNavigate();
   const location = useLocation();
   const [state, setState] = useState(location.state);
-  const query = new URLSearchParams(location.search);
-  const [id, setId] = useState(query.get("id") ? query.get("id") : "");
+  
   const handleUpdate = (e) => {
     e.preventDefault();
     console.log("submitted");
@@ -97,7 +96,7 @@ function EditBooking() {
           <br></br>
           <Form.Control
             name="availableSlots"
-            type="text"
+            type="time"
             value={availableSlots}
             onChange={(e) => changeState(e.target.value, e.target.name)}
             placeholder="Change Timmings"
@@ -105,11 +104,11 @@ function EditBooking() {
         </Form.Group>
 
         <Button variant="danger" type="submit" onClick={handleUpdate}>
-          Submit
+          Update
         </Button>
         <Link to="/MyBooking">
           <Button variant="danger" className="deleteCard">
-            Back
+            Cancel
           </Button>
         </Link>
       </Form>

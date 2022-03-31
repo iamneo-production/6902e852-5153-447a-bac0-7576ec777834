@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Container, Row, Col, Button } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { Link, Navigate } from "react-router-dom";
+//import { Link, Navigate } from "react-router-dom";
 import "../UserStyles/UserApp.css";
 
 //import {Navbar,Nav} from 'react-bootstrap';
@@ -39,7 +39,8 @@ function HomeUser() {
         <Container className="mainCardUser">
           <Row>
             {serviceList
-              .filter((center) => {
+            // eslint-disable-next-line array-callback-return
+              .filter((center)=> {
                 if (search === "") {
                   return center;
                 } else if (
@@ -82,7 +83,7 @@ function HomeUser() {
                             type="submit"
                             class="btn btn-success"
                           >
-                            Book SLot
+                            Book Slot
                           </button>
                         </Card.Text>
                       </Card.Body>
@@ -98,4 +99,3 @@ function HomeUser() {
 }
 
 export default HomeUser;
-

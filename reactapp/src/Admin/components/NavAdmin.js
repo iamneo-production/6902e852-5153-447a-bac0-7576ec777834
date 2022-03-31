@@ -87,12 +87,10 @@ const NavAdmin = () => {
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">
-                      <Link
-                        style={{ textDecoration: "none", color: "white" }}
-                        to={`/${page}`}
-                      >
+                      <Link style={{ textDecoration: "none", color: "white" }} to={`/${page}`}>
                         {page}
                       </Link>
+
                     </Typography>
                   </MenuItem>
                 ))}
@@ -113,10 +111,7 @@ const NavAdmin = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  <Link
-                    style={{ textDecoration: "none", color: "white" }}
-                    to={`/${page}`}
-                  >
+                  <Link style={{ textDecoration: "none", color: "white" }} to={`/${page}`}>
                     {page}
                   </Link>
                 </Button>
@@ -146,10 +141,7 @@ const NavAdmin = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <Link
-                    to="/Login"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
+                  <Link to="/Login"style={{ textDecoration: "none", color: "black" }}>
                     <MenuItem key={setting} onClick={Logout}>
                       <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
