@@ -44,8 +44,9 @@ function DashBoard() {
       .max(30, "Must be 30 characters or less")
       .required("Model is Required"),
     dateOfPurchase: Yup.date().required("Date is Required"),
-    contactNumber: Yup.number()
-      .min(13, "Must be 10 characters or less")
+    contactNumber: Yup.string()
+      .min(10, "Should be 10 numbers")
+      .max(10,"Should be 10 numbers")
       .required("Required"),
     availableSlots: Yup.string().required("Time is required"),
   });
