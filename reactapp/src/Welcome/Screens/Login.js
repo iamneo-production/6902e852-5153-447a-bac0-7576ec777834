@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from './LoginForm';
 import printerImg from '../assets/printerLogin.png';
-import '../styles/Register.css';
+import '../Styles/Register.css';
 
 function Login(){
 

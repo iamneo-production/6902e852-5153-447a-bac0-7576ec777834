@@ -1,7 +1,7 @@
 import React from "react";
 import RegisterForm from "./RegisterForm";
 import printerImg from "../assets/printer.png";
-import "../styles/Register.css";
+import "../Styles/Register.css";
 function Register() {
   return (
     <div class="body">

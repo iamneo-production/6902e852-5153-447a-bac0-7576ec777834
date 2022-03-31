@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/welcss.css'
+import '../Styles/welcss.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img from '../assets/img.png'
 //import {Link} from 'react-router-dom'
