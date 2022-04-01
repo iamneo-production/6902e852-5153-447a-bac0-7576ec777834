@@ -1,17 +1,17 @@
 import React from "react";
-import img1 from '../Assests/printerimg.png'
-import {Formik,Form} from 'formik';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import * as Yup from 'yup';
-import '../Adminstyles/AdminApp.css'
+import img1 from "../Assests/printerimg.png";
+import { Formik, Form } from "formik";
+import "bootstrap/dist/css/bootstrap.min.css";
+import * as Yup from "yup";
+import "../Adminstyles/AdminApp.css";
 import TextField from "../../Fields/TextField";
-import TextArea from "../../Fields/TextArea"
+import TextArea from "../../Fields/TextArea";
 //import { Link} from 'react-router-dom';
 import axios from "axios";
-import Image from 'react-bootstrap/Image'
+import Image from "react-bootstrap/Image";
 //import {Navbar,Nav, Button} from 'react-bootstrap';
 import NavAdmin from "./NavAdmin";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import base_url from "../../api/bootapi";
 
 function AddCenter() {
@@ -41,21 +41,25 @@ function AddCenter() {
     serviceCenterImage: "",
     serviceCenterDes: "",
   };
-  const onSubmit = async (value) => {
-    try {
-      const sub = await axios({
-        method: "POST",
-        url: `${base_url}/admin/addServiceCenter`,
-        data: value,
+  function onSubmit(data) {
+    axios
+      .post(`${base_url}/admin/addServiceCenter`, data, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      });
-      console.log(value,sub);
-      navigate("/CenterProfile");
-      alert("Center Added Succesfully !");
-    } catch (err) {
-      alert("Center Add Failed !");
-    }
-  };
+      })
+      .then(
+        (response) => {
+          console.log(response.data);
+          if (response.data === "added") {
+            navigate("/CenterProfile");
+            alert("Center Added Succesfully !");
+          } else alert("Center Added Already");
+        },
+        (error) => {
+          console.log(error);
+          console.log("error");
+        }
+      );
+  }
 
   return (
     <Formik
@@ -65,7 +69,7 @@ function AddCenter() {
     >
       {(formik) => (
         <div>
-          < NavAdmin/>
+          <NavAdmin />
           <Form>
             <div className="container mt-2 ">
               <div className="row">
@@ -104,7 +108,6 @@ function AddCenter() {
                       id="addImageUrl"
                     />
                     <div>
-                      
                       <TextArea
                         label="Description of Service Center"
                         type="text"
@@ -138,7 +141,5 @@ function AddCenter() {
 }
 
 export default AddCenter;
-    
-/** <img className='img1class' alt='A Printer Image' src={img1} />*/
-  
 
+/** <img className='img1class' alt='A Printer Image' src={img1} />*/
