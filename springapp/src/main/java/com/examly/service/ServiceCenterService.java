@@ -22,7 +22,10 @@ public class ServiceCenterService {
         ServiceModel serviceCenter = service.get();
         return serviceCenter;
     }
+     public ServiceModel findByServiceCenterEmail(String serviceCenterEmail) {
+        return servicerepo.findByServiceCenterEmail(serviceCenterEmail);
 
+    }
     public void deleteAll() {
         servicerepo.deleteAll();
     }
