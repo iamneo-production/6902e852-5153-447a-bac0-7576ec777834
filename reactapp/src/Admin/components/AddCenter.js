@@ -26,7 +26,7 @@ function AddCenter() {
     serviceCenterAddress: Yup.string()
       .max(30, "Must be 30 characters or less")
       .required("Required"),
-    serviceCenterPhone: Yup.number()
+    serviceCenterPhone: Yup.string()
       .min(10, "Should be 10 numbers")
       .max(10,"Should be 10 numbers")
       .required("Required"),

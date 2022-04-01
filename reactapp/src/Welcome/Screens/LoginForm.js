@@ -43,7 +43,6 @@ function LoginForm() {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-        console.log(values);
         postDatatoServer(values);
       }}
     >

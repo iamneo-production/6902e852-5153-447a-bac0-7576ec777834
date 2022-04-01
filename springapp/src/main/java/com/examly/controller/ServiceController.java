@@ -24,7 +24,7 @@ public class ServiceController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/getServiceCenter")
+    @GetMapping("/getAllServiceCenters")
     public List<ServiceModel> display() {
         return serviceCenterService.findAll();
     }

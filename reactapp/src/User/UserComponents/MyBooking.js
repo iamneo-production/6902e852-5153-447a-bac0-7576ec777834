@@ -58,25 +58,34 @@ function MyBooking() {
    
    const today = new Date();
    const currentMonth =  today.getMonth()+1
-
+   const currentDate = today.getDate();
    //check whether current month is single digit or not 
    // Is signle digit add 0 before month digit -- since in booked Date from form - getting 03
    const Length = currentMonth.toString().length;
-   let thisMonth = "";
-   if(Length === 1){
-     thisMonth = "0"+ currentMonth.toString();
-   }
-   else
-    thisMonth = currentMonth;
-      //Calculate todays date & current time
-   const currentDate = `${today.getFullYear()}-${thisMonth}-${today.getDate()}`;
-   const currentTime = today.getHours() + ':' + today.getMinutes();
+    let thisMonth = "";
+    if(Length === 1){
+      thisMonth = "0"+ currentMonth.toString();
+    }
+    else
+      thisMonth = currentMonth;
 
+    const dateLength = currentDate.toString().length;
+    //console.log("Date Length :",dateLength)
+    let thisDate = "";
+    if(dateLength === 1){
+      thisDate = "0"+ currentDate.toString();   
+    }
+    else
+      thisDate = currentDate;
+      //Calculate todays date & current time
+   const todayDate = `${today.getFullYear()}-${thisMonth}-${thisDate}`;
+   const currentTime = today.getHours() + ':' + today.getMinutes();
+   
    //Review Button Click to Enable or Disable Button
    function onReviewClick(bookedDate , bookedTime){
-     console.log("Current date & Current Time :" ,currentDate," ", currentTime)
+     console.log("Current date & Current Time :" ,todayDate," ", currentTime)
      console.log("Booked Date  &  Booked Time :",bookedDate," ",bookedTime)
-    if(currentDate === bookedDate ){
+    if(todayDate === bookedDate ){
       if(currentTime >= bookedTime){
             setDisplay(true); 
             console.log("Review Button Enabled -- Current book same date")
@@ -86,7 +95,7 @@ function MyBooking() {
             console.log(" Review Button Disabled -- Current book same date")
         }
       }
-      else if (currentDate > bookedDate){
+      else if (todayDate > bookedDate){
           setDisplay(true); 
           console.log("Review Button Enable")
       }

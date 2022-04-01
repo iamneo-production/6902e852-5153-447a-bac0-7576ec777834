@@ -16,9 +16,11 @@ function DashBoard() {
   function validateDate(dateChoosen){
     const today = new Date();
     const currentMonth =  today.getMonth()+1
-
+    const currentDate = today.getDate()
+    console.log(currentDate)
     //check whether current month is single digit or not 
     // Is signle digit add 0 before month digit -- since in booked Date from form - getting 03
+
     const Length = currentMonth.toString().length;
     let thisMonth = "";
     if(Length === 1){
@@ -26,11 +28,21 @@ function DashBoard() {
     }
     else
       thisMonth = currentMonth;
+
+    const dateLength = currentDate.toString().length;
+    //console.log("Date Length :",dateLength)
+    let thisDate = "";
+    if(dateLength === 1){
+      thisDate = "0"+ currentDate.toString();   
+    }
+    else
+      thisDate = currentDate;
+      
         //Calculate todays date & current time
-    const currentDate = `${today.getFullYear()}-${thisMonth}-${today.getDate()}`;
-    console.log("Todays date",currentDate)
+    const todayDate = `${today.getFullYear()}-${thisMonth}-${thisDate}`;
+    console.log("Todays date",todayDate)
     console.log("Choosen date",dateChoosen)
-    if(currentDate <= dateChoosen){
+    if(todayDate <= dateChoosen){
       return true;
     }
     return false;

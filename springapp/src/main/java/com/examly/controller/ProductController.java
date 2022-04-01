@@ -1,8 +1,8 @@
-package com.example.controller;
+package com.examly.controller;
 
-import com.example.Repository.ProductRepository;
-import com.example.model.ProductModel;
-import com.example.service.ProductService;
+import com.examly.Repository.ProductRepository;
+import com.examly.model.ProductModel;
+import com.examly.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

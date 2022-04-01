@@ -13,10 +13,9 @@ public class ProductService {
     @Autowired
     private ProductRepository productrepo;
 
-    public ProductModel saveBooking(ProductModel productModel) {
+    public void saveAll(ProductModel productModel) {
         productrepo.save(productModel);
 
-        return productModel;
     }
 
     public List<ProductModel> findAll() {

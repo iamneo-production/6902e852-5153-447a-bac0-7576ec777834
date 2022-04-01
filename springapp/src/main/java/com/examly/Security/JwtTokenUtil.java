@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -71,7 +69,6 @@ public class JwtTokenUtil implements Serializable {
     public Boolean canTokenBeRefreshed(String token) {
         return (!isTokenExpired(token) || ignoreTokenExpiration(token));
     }
-    
 
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = getEmailFromToken(token);

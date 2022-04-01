@@ -1,6 +1,6 @@
-package com.example.Repository;
+package com.examly.Repository;
 
-import com.example.model.ProductModel;
+import com.examly.model.ProductModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

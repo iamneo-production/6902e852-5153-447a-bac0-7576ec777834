@@ -1,8 +1,6 @@
 package com.examly.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "login")
@@ -15,11 +13,11 @@ public class UserModel {
     private String username;
     private String phonenumber;
     private String password;
-    @Transient
     private String confirmpassword;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = ProductModel.class)
-    private List<ProductModel> productModel = new ArrayList<>();
+
+//    @OneToMany(cascade = CascadeType.ALL, targetEntity = ProductModel.class)
+//    private List<ProductModel> productModel = new ArrayList<>();
 
     public UserModel() {
 
@@ -30,13 +28,13 @@ public class UserModel {
         this.email = email;
     }
 
-    public List<ProductModel> getProductModel() {
-        return productModel;
-    }
+   // public List<ProductModel> getProductModel() {
+//        return productModel;
+//    }
 
-    public void ProductModel(List<ProductModel> productModel) {
-        this.productModel = productModel;
-    }
+    //public void ProductModel(List<ProductModel> productModel) {
+//        this.productModel = productModel;
+//    }
 
     public Long getId() {
         return id;
@@ -78,9 +76,6 @@ public class UserModel {
         this.password = password;
     }
 
-    public String getConfrmpassword() {
-        return confirmpassword;
-    }
 
     public String getEmail() {
         return email;
@@ -97,6 +92,5 @@ public class UserModel {
     public void setUsername(String username) {
         this.username = username;
     }
-
 
 }

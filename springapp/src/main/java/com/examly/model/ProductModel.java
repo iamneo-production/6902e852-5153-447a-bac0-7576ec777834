@@ -1,36 +1,30 @@
 package com.examly.model;
-
 import javax.persistence.*;
 import java.util.Date;
-
 @Entity
-@Table(name = "UserSlotBooking")
+@Table(name = "Product")
 public class ProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long p_id;
+    private Long id;
     private String productName;
     private String productModelNo;
     @Temporal(TemporalType.DATE)
     private Date dateOfPurchase;
     private String contactNumber;
     private String problemDescription;
-    private String slotBookingTime;
+    private String availableSlots;
     private Long userId;
-
     //@OneToMany(fetch = FetchType.LAZY)
     public Long getUserId() {
         return userId;
     }
-
     public void setUserId(Long userId) {
         this.userId = userId;
     }
-
     public String getProductName() {
         return productName;
     }
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
@@ -52,11 +46,11 @@ public class ProductModel {
     }
 
     public Long getId() {
-        return p_id;
+        return id;
     }
 
     public void setId(Long id) {
-        this.p_id = id;
+        this.id = id;
     }
 //    public String getDateOfPurchase() {
 //        return dateOfPurchase;
@@ -82,11 +76,11 @@ public class ProductModel {
         this.problemDescription = problemDescription;
     }
 
-    public String getSlotBookingTime() {
-        return slotBookingTime;
+    public String getAvailableSlots() {
+        return availableSlots;
     }
 
-    public void setSlotBookingTime(String slotBookingTime) {
-        this.slotBookingTime = slotBookingTime;
+    public void setAvailableSlots(String availableSlots) {
+        this.availableSlots = availableSlots;
     }
 }
