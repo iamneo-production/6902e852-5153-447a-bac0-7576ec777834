@@ -52,7 +52,7 @@ function AddCenter() {
           if (response.data === "added") {
             navigate("/CenterProfile");
             alert("Center Added Succesfully !");
-          } else alert("Center Added Already");
+          } else alert("ServiceCenter Already Exist");
         },
         (error) => {
           console.log(error);
