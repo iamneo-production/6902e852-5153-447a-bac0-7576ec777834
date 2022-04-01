@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ServiceRepository extends JpaRepository<ServiceModel, Long> {
+    ServiceModel findByServiceCenterEmail(String serviceCenterEmail);
 }
