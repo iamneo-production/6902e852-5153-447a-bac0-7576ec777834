@@ -19,8 +19,10 @@ public class ServiceController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/addServiceCenter")
     public String add(@RequestBody ServiceModel service) {
+        if (serviceCenterService.findByServiceCenterEmail(service.getServiceCenterEmail()) == null){
         serviceCenterService.saveAll(service);
-        return "added";
+        return "added";}
+        return "Service center already exist";
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
