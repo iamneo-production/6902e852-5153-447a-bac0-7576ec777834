@@ -43,7 +43,7 @@ function App() {
       return (
         <div>
           <Routes>
-            <Route path="/Home" exact element={<Home />} />
+            <Route path="/" exact element={<Home />} />
             <Route path="/Register" exact element={<Register />} />
             <Route path="/Login" exact element={<Login />} />
             <Route path="*" exact element={<Navigate to="/Login" />} />
@@ -52,10 +52,6 @@ function App() {
       );
     }
   };
-  return <div>
-    {protected_route()}
-    </div>;
+  return <div>{protected_route()}</div>;
 }
 export default App;
-
-
